@@ -8,9 +8,9 @@ import (
 )
 
 type CategoryRepo interface {
-	AllCategory() []model.Category
+	AllCategories() []model.Category
 	Insert(category model.Category) model.Category
-	GetByID(categoryId uint64) (model.Category, error)
+	GetById(categoryId uint64) (model.Category, error)
 	Save(category *model.Category)
 	DeleteById(categoryId uint64) *gorm.DB
 }
@@ -47,6 +47,6 @@ func (repo *categoryRepo) Save(category *model.Category) {
 	repo.db.Save(category)
 }
 
-func (repo *categoryRepo) DeleteById(categoryId uint) *gorm.DB {
+func (repo *categoryRepo) DeleteById(categoryId uint64) *gorm.DB {
 	return repo.db.Delete(&model.Category{}, categoryId)
 }

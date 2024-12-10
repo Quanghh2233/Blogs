@@ -15,7 +15,7 @@ type authRepo struct {
 	db *gorm.DB
 }
 
-func NerAuthRepo(db *gorm.DB) *authRepo {
+func NewAuthRepo(db *gorm.DB) *authRepo {
 	return &authRepo{db: db}
 }
 

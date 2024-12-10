@@ -24,7 +24,7 @@ func NewCategoryService(categoryRepo repository.CategoryRepo) *categoryService {
 }
 
 func (service *categoryService) All() []model.Category {
-	return service.categoryRepo.AllCategory()
+	return service.categoryRepo.AllCategories()
 }
 
 func (service *categoryService) Insert(categoryDTO dto.Category) model.Category {
@@ -37,7 +37,7 @@ func (service *categoryService) Insert(categoryDTO dto.Category) model.Category 
 }
 
 func (service *categoryService) Update(categoryId uint64, categoryDTO dto.Category) (model.Category, error) {
-	category, err := service.categoryRepo.GetByID(categoryId)
+	category, err := service.categoryRepo.GetById(categoryId)
 	if err != nil {
 		return category, err
 	}

@@ -10,7 +10,7 @@ import (
 
 type PostRepo interface {
 	PostCount() int64
-	AllPost(limit, string, offset string) []model.Post
+	AllPost(limit string, offset string) []model.Post
 	FindByIdWithCategory(postId uint64) (model.Post, error)
 	FindByID(postId uint64) (model.Post, error)
 	Insert(post model.Post) model.Post
@@ -75,7 +75,7 @@ func (repo *postRepo) Insert(post model.Post) model.Post {
 	return post
 }
 
-func (repo *postRepo) Save(post model.Post) *gorm.DB {
+func (repo *postRepo) Save(post *model.Post) *gorm.DB {
 	return repo.db.Save(post)
 }
 
