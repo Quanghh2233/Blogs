@@ -12,7 +12,7 @@ type CategoryRepo interface {
 	Insert(category model.Category) model.Category
 	GetByID(categoryId uint64) (model.Category, error)
 	Save(category *model.Category)
-	Delete(categoryId uint64) *gorm.DB
+	DeleteById(categoryId uint64) *gorm.DB
 }
 
 type categoryRepo struct {
