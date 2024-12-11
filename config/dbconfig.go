@@ -15,10 +15,10 @@ type dbConf struct {
 func GetDbConf() *dbConf {
 	return &dbConf{
 		Host:     os.Getenv("DB_HOST"),
-		User:     os.Getenv("DB_HOST"),
-		Password: os.Getenv("DB_HOST"),
-		Dbname:   os.Getenv("DB_HOST"),
-		Port:     os.Getenv("DB_HOST"),
+		User:     os.Getenv("DB_USER"),
+		Password: os.Getenv("DB_PASSWORD"),
+		Dbname:   os.Getenv("DB_NAME"),
+		Port:     os.Getenv("DB_PORT"),
 		Sslmode:  "disable",
 		Timezone: "UTC",
 	}
